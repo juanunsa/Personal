@@ -1,0 +1,24 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="1190" gr:y="400" id="wv5#page26" name="nueva convocatoria">
+  <ViewComponents>
+    <Form gr:x="0" gr:y="0" id="wv5#page26#frm13" name="nueva convocatoria">
+      <DataBinding classServiceRes="gestionDatos$cls9"/>
+      <ConditionalExpression id="wv5#page26#frm13#sc4" defaultPolicy="emptyAlwaysApplied" booleanOperator="and">
+        <KeyCondition id="wv5#page26#frm13#sc4#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+      </ConditionalExpression>
+      <Field id="wv5#page26#frm13#fld38" type="string" modifiable="true" name="resolucion"/>
+      <Field id="wv5#page26#frm13#fld39" type="string" modifiable="true" name="fecha_publicidad"/>
+      <Field id="wv5#page26#frm13#fld40" type="string" modifiable="true" name="Cargo"/>
+    </Form>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+  <Events>
+    <OnSelectEvent id="wv5#page26#oslte16" name="guardar" gr:pinned="true" gr:side="3" gr:pos="5">
+      <NavigationFlow id="wv5#page26#oslte16#nf45" to="wv5#page25" automaticCoupling="true"/>
+    </OnSelectEvent>
+    <OnSelectEvent id="wv5#page26#oslte17" name="Cancelar" gr:pinned="true" gr:side="3" gr:pos="4">
+      <NavigationFlow id="wv5#page26#oslte17#nf46" to="wv5#page25" automaticCoupling="true"/>
+    </OnSelectEvent>
+  </Events>
+</Page>

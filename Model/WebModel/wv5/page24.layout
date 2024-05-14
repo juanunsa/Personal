@@ -1,0 +1,12 @@
+<wr-page>
+  <wr-content for="page-content">
+    <wd-alert [messages]="valueOf('main/msg18/messages')"></wd-alert>
+  </wr-content>
+  <wr-content for="breadcrumb">
+    <wd-menu menu="main/{Event}*">
+      <wr-content for="menu-item[oslte14]">
+        <wd-menu-item></wd-menu-item>
+      </wr-content>
+    </wd-menu>
+  </wr-content>
+</wr-page>

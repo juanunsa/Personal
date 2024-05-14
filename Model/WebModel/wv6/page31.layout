@@ -1,0 +1,7 @@
+<wr-page>
+  <wr-content for="page-content">
+    <wd-card>
+      <wr-content for="content"></wr-content>
+    </wd-card>
+  </wr-content>
+</wr-page>

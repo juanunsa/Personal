@@ -1,0 +1,219 @@
+<DomainModel xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:srs="http://www.webratio.com/2017/IFML/ServerResources" xmlns:srsvalidation="http://www.webratio.com/2017/IFML/ServerValidation">
+  <Class gr:x="150" gr:y="160" id="WUser" name="App User" singleton="true" attributeOrder="wUserOID wUsername">
+    <Attribute id="wUserOID" key="true" name="oid" type="integer"/>
+    <Attribute id="wUsername" name="username" type="string"/>
+  </Class>
+  <Class gr:x="450" gr:y="170" id="WRole" name="App Role" attributeOrder="wRoleOID wRoleName">
+    <Attribute id="wRoleOID" key="true" name="oid" type="integer"/>
+    <Attribute id="wRoleName" name="name" type="string"/>
+  </Class>
+  <Association id="WUser2WRole_WRole2WUser" name="AppUser_AppRole" sourceClass="WUser" targetClass="WRole">
+    <AssociationRole1 id="WUser2WRole" name="AppUserToAppRole" maxCard="N"/>
+    <AssociationRole2 id="WRole2WUser" name="AppRoleToAppUser" maxCard="1"/>
+  </Association>
+  <srs:Resources>
+    <srs:ActionService ref="gestionDatos$ada1" refModelId="tlads0#ada1" pid="gestionDatos" name="guardar_financiamiento" defaultSuccessPortDefinition="tlads0#ada1#spd1" defaultErrorPortDefinition="tlads0#ada1#epd1" serverResourceName="actions/guardarFinanciamiento" method="create">
+      <srs:ServiceScope authenticated="true" method="create"/>
+      <srs:ServiceScope anonymous="true" method="create"/>
+      <srs:Input ref="gestionDatos$pdp13" refModelId="tlads0#ada1#ipd1#pdp13" pid="gestionDatos" serverProperty="cargo" name="cargo" type="string" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp18" refModelId="tlads0#ada1#ipd1#pdp18" pid="gestionDatos" serverProperty="fechaInicio" name="fecha_inicio" type="date" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp19" refModelId="tlads0#ada1#ipd1#pdp19" pid="gestionDatos" serverProperty="fechaFin" name="fecha_fin" type="date" location="body" cardinality="N">
+        <srs:ServerResourceValidation>
+          <srsvalidation:ValidationRule type="MandatoryValidationRule" name="fin_requerido"/>
+        </srs:ServerResourceValidation>
+      </srs:Input>
+      <srs:Input ref="gestionDatos$pdp20" refModelId="tlads0#ada1#ipd1#pdp20" pid="gestionDatos" serverProperty="estado" name="estado" type="string" location="body" cardinality="N">
+        <srs:ServerResourceValidation>
+          <srsvalidation:ValidationRule type="MandatoryValidationRule" name="estado_requerido"/>
+        </srs:ServerResourceValidation>
+      </srs:Input>
+      <srs:Input ref="gestionDatos$pdp22" refModelId="tlads0#ada1#ipd1#pdp22" pid="gestionDatos" serverProperty="fuente" name="fuente" type="string" location="body" cardinality="N"/>
+    </srs:ActionService>
+    <srs:ActionService ref="gestionDatos$ada6" refModelId="tlads0#ada6" pid="gestionDatos" name="Elegir jurado" defaultSuccessPortDefinition="tlads0#ada6#spd6" defaultErrorPortDefinition="tlads0#ada6#epd6" serverResourceName="actions/elegirJurado" method="create">
+      <srs:ServiceScope authenticated="true" method="create"/>
+      <srs:ServiceScope anonymous="true" method="create"/>
+      <srs:Input ref="gestionDatos$pdp36" refModelId="tlads0#ada6#ipd6#pdp36" pid="gestionDatos" serverProperty="dni" name="dni" type="integer" location="body" cardinality="N"/>
+    </srs:ActionService>
+    <srs:ActionService ref="gestionDatos$ada2" refModelId="tlads0#ada2" pid="gestionDatos" name="borrar_financiamiento" defaultSuccessPortDefinition="tlads0#ada2#spd2" defaultErrorPortDefinition="tlads0#ada2#epd2" serverResourceName="actions/borrarFinanciamiento" method="create">
+      <srs:ServiceScope authenticated="true" method="create"/>
+      <srs:ServiceScope anonymous="true" method="create"/>
+      <srs:Input ref="gestionDatos$pdp30" refModelId="tlads0#ada2#ipd2#pdp30" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" location="body" cardinality="N"/>
+    </srs:ActionService>
+    <srs:ActionService ref="gestionDatos$ada3" refModelId="tlads0#ada3" pid="gestionDatos" name="nueva_convocatoria" defaultSuccessPortDefinition="tlads0#ada3#spd3" defaultErrorPortDefinition="tlads0#ada3#epd3" serverResourceName="actions/nuevaConvocatoria" method="create">
+      <srs:ServiceScope authenticated="true" method="create"/>
+      <srs:ServiceScope anonymous="true" method="create"/>
+      <srs:Input ref="gestionDatos$pdp24" refModelId="tlads0#ada3#ipd3#pdp24" pid="gestionDatos" serverProperty="cargo" name="cargo" type="integer" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp25" refModelId="tlads0#ada3#ipd3#pdp25" pid="gestionDatos" serverProperty="estadoConvocatoria" name="estado_convocatoria" type="text" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp26" refModelId="tlads0#ada3#ipd3#pdp26" pid="gestionDatos" serverProperty="fechaDesde" name="fecha_desde" type="date" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp27" refModelId="tlads0#ada3#ipd3#pdp27" pid="gestionDatos" serverProperty="resolucion" name="resolucion" type="blob" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp28" refModelId="tlads0#ada3#ipd3#pdp28" pid="gestionDatos" serverProperty="fechaHasta" name="fecha_hasta" type="date" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp29" refModelId="tlads0#ada3#ipd3#pdp29" pid="gestionDatos" serverProperty="resolucionFileName" name="resolucion [file name]" type="string" location="body" cardinality="N"/>
+    </srs:ActionService>
+    <srs:ActionService ref="gestionDatos$ada9" refModelId="tlads0#ada9" pid="gestionDatos" name="nuevo_publico" defaultSuccessPortDefinition="tlads0#ada9#spd9" defaultErrorPortDefinition="tlads0#ada9#epd9" serverResourceName="actions/nuevoPublico" method="create">
+      <srs:ServiceScope name="Anonimous" method="create"/>
+      <srs:ServiceScope authenticated="true" method="create"/>
+      <srs:ServiceScope anonymous="true" method="create"/>
+      <srs:Input ref="gestionDatos$pdp47" refModelId="tlads0#ada9#ipd9#pdp47" pid="gestionDatos" serverProperty="clave" name="clave" type="string" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp48" refModelId="tlads0#ada9#ipd9#pdp48" pid="gestionDatos" serverProperty="correo" name="correo" type="string" location="body" cardinality="N"/>
+    </srs:ActionService>
+    <srs:ActionService ref="gestionDatos$ada8" refModelId="tlads0#ada8" pid="gestionDatos" name="registrar usuario" defaultSuccessPortDefinition="tlads0#ada8#spd8" defaultErrorPortDefinition="tlads0#ada8#epd8" serverResourceName="actions/registrarUsuario" method="create">
+      <srs:ServiceScope name="Anonimous" method="create"/>
+      <srs:ServiceScope authenticated="true" method="create"/>
+      <srs:ServiceScope anonymous="true" method="create"/>
+      <srs:Input ref="gestionDatos$pdp42" refModelId="tlads0#ada8#ipd8#pdp42" pid="gestionDatos" serverProperty="secretKey" name="Secret Key" type="password" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp43" refModelId="tlads0#ada8#ipd8#pdp43" pid="gestionDatos" serverProperty="userObject" name="User Object" type="string" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp45" refModelId="tlads0#ada8#ipd8#pdp45" pid="gestionDatos" serverProperty="correo" name="correo" type="string" location="body" cardinality="N"/>
+      <srs:Input ref="gestionDatos$pdp46" refModelId="tlads0#ada8#ipd8#pdp46" pid="gestionDatos" serverProperty="role" name="role" type="string" location="body" cardinality="N"/>
+    </srs:ActionService>
+    <srs:ClassService ref="gestionDatos$cls4" refModelId="cls4" pid="gestionDatos" serverResourceName="data/Materia" name="Materia">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att8" refModelId="cls4#att8" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att9" refModelId="cls4#att9" pid="gestionDatos" serverProperty="nombre" name="nombre" type="string" key="false"/>
+      <srs:Attribute ref="gestionDatos$att10" refModelId="cls4#att10" pid="gestionDatos" serverProperty="duracion" name="duracion" type="string" key="false"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls21" refModelId="cls21" pid="gestionDatos" serverResourceName="data/Publico" name="publico">
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att73" refModelId="cls21#att73" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att74" refModelId="cls21#att74" pid="gestionDatos" serverProperty="correo" name="correo" type="string"/>
+      <srs:Attribute ref="gestionDatos$att75" refModelId="cls21#att75" pid="gestionDatos" serverProperty="clave" name="clave" type="string"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls2" refModelId="cls2" pid="gestionDatos" serverResourceName="data/Dedicacion" name="Dedicacion">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att3" refModelId="cls2#att3" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att4" refModelId="cls2#att4" pid="gestionDatos" serverProperty="nombre" name="nombre" type="string" key="false"/>
+      <srs:Attribute ref="gestionDatos$att5" refModelId="cls2#att5" pid="gestionDatos" serverProperty="horas" name="horas" type="integer" key="false"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls17" refModelId="cls17" pid="gestionDatos" serverResourceName="data/Regimen" name="regimen">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att61" refModelId="cls17#att61" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att62" refModelId="cls17#att62" pid="gestionDatos" serverProperty="tipo" name="tipo" type="string"/>
+      <srs:Attribute ref="gestionDatos$att63" refModelId="cls17#att63" pid="gestionDatos" serverProperty="tiempo" name="tiempo" type="integer"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls15" refModelId="cls15" pid="gestionDatos" serverResourceName="data/Cubre" name="Cubre">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att54" refModelId="cls15#att54" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att55" refModelId="cls15#att55" pid="gestionDatos" serverProperty="convocatoria" name="convocatoria" type="integer"/>
+      <srs:Attribute ref="gestionDatos$att56" refModelId="cls15#att56" pid="gestionDatos" serverProperty="cargo" name="cargo" type="integer"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls8" refModelId="cls8" pid="gestionDatos" serverResourceName="data/Cargo" name="Cargo">
+      <srs:ServiceScope authenticated="true" method="create"/>
+      <srs:ServiceScope authenticated="true" method="delete"/>
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope authenticated="true" method="update"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att21" refModelId="cls8#att21" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att22" refModelId="cls8#att22" pid="gestionDatos" serverProperty="categoria" name="categoria" type="integer" key="false"/>
+      <srs:Attribute ref="gestionDatos$att23" refModelId="cls8#att23" pid="gestionDatos" serverProperty="dedicacion" name="dedicacion" type="integer" key="false"/>
+      <srs:Attribute ref="gestionDatos$att24" refModelId="cls8#att24" pid="gestionDatos" serverProperty="materia" name="materia" type="integer" key="false"/>
+      <srs:Attribute ref="gestionDatos$att25" refModelId="cls8#att25" pid="gestionDatos" serverProperty="regimen" name="regimen" type="string" key="false"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls1" refModelId="cls1" pid="gestionDatos" serverResourceName="data/Carrera" name="Carrera">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att1" refModelId="cls1#att1" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att2" refModelId="cls1#att2" pid="gestionDatos" serverProperty="nombre" name="nombre" type="string" key="false"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$User" refModelId="User" pid="gestionDatos" serverResourceName="data/User" name="User">
+      <srs:ServiceScope name="Anonimous" method="create"/>
+      <srs:ServiceScope name="Anonimous" method="delete"/>
+      <srs:ServiceScope name="Anonimous" method="read"/>
+      <srs:ServiceScope name="Anonimous" method="update"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$userName" refModelId="userName" pid="gestionDatos" serverProperty="userID" name="User ID" type="string" key="true"/>
+      <srs:Attribute ref="gestionDatos$secretKey" refModelId="secretKey" pid="gestionDatos" serverProperty="secretKey" name="Secret Key" type="password"/>
+      <srs:Attribute ref="gestionDatos$att66" refModelId="User#att66" pid="gestionDatos" serverProperty="role" name="role" type="string"/>
+      <srs:Attribute ref="gestionDatos$att67" refModelId="User#att67" pid="gestionDatos" serverProperty="correo" name="correo" type="string"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls9" refModelId="cls9" pid="gestionDatos" serverResourceName="data/Convocatoria" name="Convocatoria">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att26" refModelId="cls9#att26" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att27" refModelId="cls9#att27" pid="gestionDatos" serverProperty="fechaDesde" name="fecha_desde" type="date"/>
+      <srs:Attribute ref="gestionDatos$att28" refModelId="cls9#att28" pid="gestionDatos" serverProperty="fechaHasta" name="fecha_hasta" type="date"/>
+      <srs:Attribute ref="gestionDatos$att29" refModelId="cls9#att29" pid="gestionDatos" serverProperty="cargo" name="cargo" type="integer"/>
+      <srs:Attribute ref="gestionDatos$att30" refModelId="cls9#att30" pid="gestionDatos" serverProperty="resolucion" name="resolucion" type="blob"/>
+      <srs:Attribute ref="gestionDatos$att31" refModelId="cls9#att31" pid="gestionDatos" serverProperty="estadoConvocatoria" name="estado_convocatoria" type="text"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls20" refModelId="cls20" pid="gestionDatos" serverResourceName="data/Condicion" name="Condicion">
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att70" refModelId="cls20#att70" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att71" refModelId="cls20#att71" pid="gestionDatos" serverProperty="nombre" name="nombre" type="string" key="false"/>
+      <srs:Attribute ref="gestionDatos$att72" refModelId="cls20#att72" pid="gestionDatos" serverProperty="tiempo" name="tiempo" type="integer" key="false"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls5" refModelId="cls5" pid="gestionDatos" serverResourceName="data/Financiamiento" name="Financiamiento">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att11" refModelId="cls5#att11" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att12" refModelId="cls5#att12" pid="gestionDatos" serverProperty="fuente" name="fuente" type="text"/>
+      <srs:Attribute ref="gestionDatos$att13" refModelId="cls5#att13" pid="gestionDatos" serverProperty="fechaInicio" name="fecha_inicio" type="date"/>
+      <srs:Attribute ref="gestionDatos$att14" refModelId="cls5#att14" pid="gestionDatos" serverProperty="fechaFin" name="fecha_fin" type="date"/>
+      <srs:Attribute ref="gestionDatos$att15" refModelId="cls5#att15" pid="gestionDatos" serverProperty="cargo" name="Cargo" type="text"/>
+      <srs:Attribute ref="gestionDatos$att16" refModelId="cls5#att16" pid="gestionDatos" serverProperty="estado" name="estado" type="string"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls18" refModelId="cls18" pid="gestionDatos" serverResourceName="data/Estado" name="Estado">
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att64" refModelId="cls18#att64" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att65" refModelId="cls18#att65" pid="gestionDatos" serverProperty="estado" name="estado" type="string"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls14" refModelId="cls14" pid="gestionDatos" serverResourceName="data/Inscribe" name="inscribe">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att50" refModelId="cls14#att50" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att51" refModelId="cls14#att51" pid="gestionDatos" serverProperty="convocatoria" name="convocatoria" type="integer"/>
+      <srs:Attribute ref="gestionDatos$att52" refModelId="cls14#att52" pid="gestionDatos" serverProperty="docente" name="docente" type="integer"/>
+      <srs:Attribute ref="gestionDatos$att53" refModelId="cls14#att53" pid="gestionDatos" serverProperty="fechaInscripcion" name="fecha_inscripcion" type="timestamp"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls7" refModelId="cls7" pid="gestionDatos" serverResourceName="data/Categoria" name="Categoria">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att19" refModelId="cls7#att19" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att20" refModelId="cls7#att20" pid="gestionDatos" serverProperty="nombre" name="nombre" type="string" key="false"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls10" refModelId="cls10" pid="gestionDatos" serverResourceName="data/Docente" name="Docente">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att32" refModelId="cls10#att32" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att34" refModelId="cls10#att34" pid="gestionDatos" serverProperty="dni" name="dni" type="integer"/>
+      <srs:Attribute ref="gestionDatos$att33" refModelId="cls10#att33" pid="gestionDatos" serverProperty="titulo" name="titulo" type="string"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls16" refModelId="cls16" pid="gestionDatos" serverResourceName="data/Responsable" name="Responsable">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att57" refModelId="cls16#att57" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att58" refModelId="cls16#att58" pid="gestionDatos" serverProperty="docente" name="docente" type="integer"/>
+      <srs:Attribute ref="gestionDatos$att59" refModelId="cls16#att59" pid="gestionDatos" serverProperty="materia" name="materia" type="integer"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls3" refModelId="cls3" pid="gestionDatos" serverResourceName="data/Facultad" name="Facultad">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att6" refModelId="cls3#att6" pid="gestionDatos" serverProperty="oid" name="oid" type="decimal" key="true"/>
+      <srs:Attribute ref="gestionDatos$att7" refModelId="cls3#att7" pid="gestionDatos" serverProperty="nombre" name="nombre" type="string" key="false"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls6" refModelId="cls6" pid="gestionDatos" serverResourceName="data/Fuente" name="Fuente">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att17" refModelId="cls6#att17" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att18" refModelId="cls6#att18" pid="gestionDatos" serverProperty="nombre" name="nombre" type="string" key="false"/>
+    </srs:ClassService>
+    <srs:ClassService ref="gestionDatos$cls12" refModelId="cls12" pid="gestionDatos" serverResourceName="data/Mantiene" name="Mantiene">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope anonymous="true" method="read"/>
+      <srs:Attribute ref="gestionDatos$att42" refModelId="cls12#att42" pid="gestionDatos" serverProperty="oid" name="oid" type="integer" key="true"/>
+      <srs:Attribute ref="gestionDatos$att43" refModelId="cls12#att43" pid="gestionDatos" serverProperty="financiamiento" name="financiamiento" type="integer"/>
+      <srs:Attribute ref="gestionDatos$att44" refModelId="cls12#att44" pid="gestionDatos" serverProperty="cargo" name="Cargo" type="integer"/>
+      <srs:Attribute ref="gestionDatos$att45" refModelId="cls12#att45" pid="gestionDatos" serverProperty="fechaAsignado" name="fecha_asignado" type="date"/>
+    </srs:ClassService>
+    <srs:UserService ref="gestionDatos$UserService" refModelId="UserService" pid="gestionDatos" name="User" serverResourceName="User" userServiceOperationTypes="read register update">
+      <srs:ServiceScope authenticated="true" method="read"/>
+      <srs:ServiceScope authenticated="true" method="register"/>
+      <srs:ServiceScope authenticated="true" method="update"/>
+      <srs:UserAttribute ref="gestionDatos$userName" refModelId="userName" pid="gestionDatos" serverProperty="userID" name="User ID" type="string" key="true"/>
+      <srs:UserAttribute ref="gestionDatos$att67" refModelId="User#att67" pid="gestionDatos" serverProperty="correo" name="correo" type="string"/>
+      <srs:UserAttribute ref="gestionDatos$att66" refModelId="User#att66" pid="gestionDatos" serverProperty="role" name="role" type="string"/>
+    </srs:UserService>
+  </srs:Resources>
+</DomainModel>

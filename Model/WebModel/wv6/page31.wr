@@ -1,0 +1,19 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="195" gr:y="565" id="wv6#page31" name="Detalle convocatoria">
+  <ViewComponents>
+    <Details gr:x="0" gr:y="0" id="wv6#page31#dtl2">
+      <DataBinding classServiceRes="gestionDatos$cls9"/>
+      <ConditionalExpression id="wv6#page31#dtl2#sc5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="wv6#page31#dtl2#sc5#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </ConditionalExpression>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att26"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att27"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att28"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att29"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att30"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att31"/>
+    </Details>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+</Page>

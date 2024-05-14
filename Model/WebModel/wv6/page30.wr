@@ -1,0 +1,21 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="15" gr:y="360" id="wv6#page30" name="Convocatorias" landmark="true">
+  <ViewComponents>
+    <List gr:x="0" gr:y="0" id="wv6#page30#lst6" checkable="false" distinct="false">
+      <DataBinding classServiceRes="gestionDatos$cls9"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att26"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att27"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att28"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att29"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att30"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att31"/>
+      <Events>
+        <OnSelectEvent id="wv6#page30#lst6#oslte23" name="detalle" validate="true" gr:pinned="true" gr:side="2" gr:pos="0">
+          <NavigationFlow id="wv6#page30#lst6#oslte23#nf57" to="wv6#page31#dtl2" automaticCoupling="true"/>
+        </OnSelectEvent>
+      </Events>
+    </List>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+</Page>

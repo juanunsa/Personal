@@ -1,0 +1,11 @@
+<wr-page>
+  <wr-content for="page-content">
+    <form>
+      <wd-input [label]="labelOf('main/frm13/fld38') | wrLocalize"></wd-input>
+      <wd-datepicker></wd-datepicker>
+      <wd-button context="main/oslte16"></wd-button>
+      <wd-button context="main/oslte17"></wd-button>
+    </form>
+    
+  </wr-content>
+</wr-page>

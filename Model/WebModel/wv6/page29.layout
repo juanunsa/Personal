@@ -1,0 +1,8 @@
+<wr-page>
+  <wr-content for="page-content">
+    <wd-alert [messages]="valueOf('main/msg22/messages')"></wd-alert>
+  </wr-content>
+  <wr-content for="breadcrumb">
+    <wd-menu></wd-menu>
+  </wr-content>
+</wr-page>

@@ -1,0 +1,25 @@
+<wr-page>
+  <wr-content for="brand">
+    <wd-image staticImage="assets/Logo_UNSa.jpg"></wd-image>
+    {{ labelOf('landmarks/area3') | wrLocalize }}
+  </wr-content>
+  <wr-content for="breadcrumb">
+    <wd-navigation-list itemsList="landmarks/area3/{Landmark}*">
+      <wr-content for="nav-item[page13]">
+        <wd-menu menu="/landmarks/area3/{Landmark}*">
+          <wr-content for="menu-item[page13]">
+            <wd-menu-item iconText="home"></wd-menu-item>
+          </wr-content>
+          <wr-content for="menu-item[page14]">
+            <wd-menu-item iconText="assignment"></wd-menu-item>
+          </wr-content>
+          <wr-content for="menu-item[page15]">
+            <wd-menu-item iconText="group_add"></wd-menu-item>
+          </wr-content>
+        </wd-menu>
+      </wr-content>
+      <wr-content for="nav-item[page14]"></wr-content>
+      <wr-content for="nav-item[page15]"></wr-content>
+    </wd-navigation-list>
+  </wr-content>
+</wr-page>

@@ -1,0 +1,22 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="905" gr:y="395" id="wv5#page25" name="Personal Administrativo">
+  <ViewComponents>
+    <List gr:x="0" gr:y="0" id="wv5#page25#lst5" checkable="false" distinct="false">
+      <DataBinding classServiceRes="gestionDatos$cls9"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att26"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att27"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att28"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att29"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att30"/>
+      <DisplayAttributes classServiceAttribute="gestionDatos$att31"/>
+      <SortAttributes classServiceAttribute="gestionDatos$att27" order="ascending"/>
+    </List>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+  <Events>
+    <OnSelectEvent id="wv5#page25#oslte15" name="nueva" gr:pinned="true" gr:side="1" gr:pos="3">
+      <NavigationFlow id="wv5#page25#oslte15#nf44" to="wv5#page26" automaticCoupling="true"/>
+    </OnSelectEvent>
+  </Events>
+</Page>

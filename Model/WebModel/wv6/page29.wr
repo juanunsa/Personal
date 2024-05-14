@@ -1,0 +1,15 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="5" gr:y="180" id="wv6#page29" name="Inicio" landmark="true">
+  <ViewComponents>
+    <Message gr:x="0" gr:y="0" id="wv6#page29#msg22" name="Saludo inicial">
+      <Message xml:space="preserve">Bienvenido al Sector Docente!!!</Message>
+    </Message>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+  <Events>
+    <OnSelectEvent id="wv6#page29#oslte22" name="Convocatorias" gr:pinned="true" gr:side="2" gr:pos="2">
+      <NavigationFlow id="wv6#page29#oslte22#nf56" to="wv6#page30" automaticCoupling="true"/>
+    </OnSelectEvent>
+  </Events>
+</Page>

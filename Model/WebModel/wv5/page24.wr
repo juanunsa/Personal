@@ -1,0 +1,15 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="525" gr:y="380" id="wv5#page24" name="Inicio">
+  <ViewComponents>
+    <Message gr:x="0" gr:y="0" id="wv5#page24#msg18" name="Bienvenida">
+      <Message xml:space="preserve">bienvenido</Message>
+    </Message>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+  <Events>
+    <OnSelectEvent id="wv5#page24#oslte14" name="Iniciar session" gr:pinned="true" gr:side="3" gr:pos="2">
+      <NavigationFlow id="wv5#page24#oslte14#nf43" to="wv5#page23" automaticCoupling="true"/>
+    </OnSelectEvent>
+  </Events>
+</Page>

@@ -1,0 +1,32 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="wv5#page23" name="Inicio de sesi&#243;n" gr:x="75" gr:y="110" inheritedAbstractPagesManual="true" layout:pageTemplate="WebDefault/Login">
+  <ViewComponents>
+    <Form id="wv5#page23#frm12" name="Logueo" gr:x="25" gr:y="0">
+      <Events>
+        <OnSelectEvent id="wv5#page23#frm12#oslte13" name="Sign in" validate="true">
+          <NavigationFlow id="wv5#page23#frm12#oslte13#nf40" to="wv5#act10">
+            <ParameterBinding id="wv5#page23#frm12#oslte13#nf40#par110" source="{wv5#page23#frm12#fld35}value" target="wv5#act10.tlads0#ad10#ipd13#pdp36" name="Username - Username"/>
+            <ParameterBinding id="wv5#page23#frm12#oslte13#nf40#par111" source="{wv5#page23#frm12#fld36}value" target="wv5#act10.tlads0#ad10#ipd13#pdp37" name="Password - Password"/>
+            <ParameterBinding id="wv5#page23#frm12#oslte13#nf40#par112" source="{wv5#page23#frm12#fld37}value" target="wv5#act10.tlads0#ad10#ipd13#pdp38" name="Remember Me - Remember Me"/>
+          </NavigationFlow>
+        </OnSelectEvent>
+      </Events>
+      <Field id="wv5#page23#frm12#fld35" name="Username" type="string" modifiable="true" validationOrder="wv5#page23#frm12#fld35#mnd24">
+        <VRules>
+          <MandatoryValidationRule id="wv5#page23#frm12#fld35#mnd24" name="Mandatory"/>
+        </VRules>
+      </Field>
+      <Field id="wv5#page23#frm12#fld36" name="Password" type="password" modifiable="true" validationOrder="wv5#page23#frm12#fld36#mnd25">
+        <VRules>
+          <MandatoryValidationRule id="wv5#page23#frm12#fld36#mnd25" name="Mandatory"/>
+        </VRules>
+      </Field>
+      <Field id="wv5#page23#frm12#fld37" name="Remember Me" type="boolean" modifiable="true">
+        <VRules/>
+      </Field>
+    </Form>
+    <Message id="wv5#page23#msg17" name="Error en el logueo" gr:x="0" gr:y="95"/>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+</Page>

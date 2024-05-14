@@ -1,0 +1,34 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="wv6#page28" name="Sign in" gr:x="220" gr:y="105" inheritedAbstractPagesManual="true" layout:pageTemplate="WebDefault/Login">
+  <ViewComponents>
+    <Form id="wv6#page28#frm15" name="Sign in" gr:x="0" gr:y="85">
+      <Events>
+        <OnSelectEvent id="wv6#page28#frm15#oslte19" name="Sign in" validate="true">
+          <NavigationFlow id="wv6#page28#frm15#oslte19#nf52" to="wv6#act12">
+            <ParameterBinding id="wv6#page28#frm15#oslte19#nf52#par129" source="{wv6#page28#frm15#fld44}value" target="wv6#act12.tlads0#ad12#ipd15#pdp45" name="Username - Username"/>
+            <ParameterBinding id="wv6#page28#frm15#oslte19#nf52#par130" source="{wv6#page28#frm15#fld45}value" target="wv6#act12.tlads0#ad12#ipd15#pdp46" name="Password - Password"/>
+            <ParameterBinding id="wv6#page28#frm15#oslte19#nf52#par131" source="{wv6#page28#frm15#fld46}value" target="wv6#act12.tlads0#ad12#ipd15#pdp47" name="Remember Me - Remember Me"/>
+          </NavigationFlow>
+        </OnSelectEvent>
+      </Events>
+      <Field id="wv6#page28#frm15#fld44" name="Username" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="wv6#page28#frm15#fld44#mnd29" name="Mandatory"/>
+        </VRules>
+      </Field>
+      <Field id="wv6#page28#frm15#fld45" name="Password" type="password" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="wv6#page28#frm15#fld45#mnd30" name="Mandatory"/>
+        </VRules>
+      </Field>
+      <Field id="wv6#page28#frm15#fld46" name="Remember Me" type="boolean" modifiable="true">
+        <VRules/>
+      </Field>
+    </Form>
+    <Message id="wv6#page28#msg21" name="Sign in error" gr:x="0" gr:y="0">
+      <Events/>
+    </Message>
+  </ViewComponents>
+  <layout:Grid containerType="grid">
+    <layout:Row/>
+  </layout:Grid>
+</Page>

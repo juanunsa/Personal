@@ -1,0 +1,5 @@
+<HybridModuleDefinition xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="tlmds0#hmd1" name="Hybrid Module 1">
+  <InputPortDefinition id="tlmds0#hmd1#ipd3" name="Input Port 3" gr:x="0" gr:y="30">
+    <NavigationFlow id="tlmds0#hmd1#ipd3#nf13" to="tlmds0#hmd1#page10" automaticCoupling="true"/>
+  </InputPortDefinition>
+</HybridModuleDefinition>

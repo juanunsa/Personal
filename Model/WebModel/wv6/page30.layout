@@ -1,0 +1,42 @@
+<wr-page>
+  <wr-content for="page-content">
+    <wd-data-grid cols="main/lst6/data/{Attribute}*" [rows]="valueOf('main/lst6/data')" [enableControls]="true" [detailRow]="true">
+      <wr-content for="header[_be_att26]">
+        {{ labelOf('.') | wrLocalize }}
+      </wr-content>
+      <wr-content for="data[_be_att26]">
+        {{ valueOf('.', row) | number:'wr-integer' }}
+      </wr-content>
+      <wr-content for="header[_be_att27]">
+        {{ labelOf('.') | wrLocalize }}
+      </wr-content>
+      <wr-content for="data[_be_att27]">
+        {{ valueOf('.', row) | date:'wr-date' }}
+      </wr-content>
+      <wr-content for="header[_be_att28]">
+        {{ labelOf('.') | wrLocalize }}
+      </wr-content>
+      <wr-content for="data[_be_att28]">
+        {{ valueOf('.', row) | date:'wr-date' }}
+      </wr-content>
+      <wr-content for="header[_be_att29]">
+        {{ labelOf('.') | wrLocalize }}
+      </wr-content>
+      <wr-content for="data[_be_att29]">
+        {{ valueOf('.', row) | number:'wr-integer' }}
+      </wr-content>
+      <wr-content for="header[_be_att30]">
+        {{ labelOf('.') | wrLocalize }}
+      </wr-content>
+      <wr-content for="data[_be_att30]">
+        <wd-anchor type="file"></wd-anchor>
+      </wr-content>
+      <wr-content for="header[_be_att31]">
+        {{ labelOf('.') | wrLocalize }}
+      </wr-content>
+      <wr-content for="data[_be_att31]">
+        {{ valueOf('.', row) }}
+      </wr-content>
+    </wd-data-grid>
+  </wr-content>
+</wr-page>
